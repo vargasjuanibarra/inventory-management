@@ -6,6 +6,7 @@ import Header from "@/app/(components)/Header";
 import { PlusCircle, SearchIcon } from "lucide-react";
 import Rating from "../(components)/Rating";
 import CreateProductModal from "./CreateProductModal";
+import Image from "next/image";
 
 type ProductFormData = {
   name: string;
@@ -77,7 +78,15 @@ const Products = () => {
               className="border shadow rounded-md p-4 max-w-full w-full mx-auto"
             >
               <div className="flex flex-col items-center">
-                img
+                <Image
+                  src={`s3-storage-inventory-management.s3.ap-southeast-1.amazonaws.com/product${
+                    Math.floor(Math.random() * 3) + 1
+                  }.png`}
+                  alt="Profile"
+                  width={150}
+                  height={150}
+                  className="rounded-2xl mb-3 w-26 h-36"
+                />
                 <h3 className="text-lg text-gray-900 font-semibold">
                   {product.name}
                 </h3>
